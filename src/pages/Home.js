@@ -1,45 +1,81 @@
 import { Link } from 'react-router-dom'
-import { Check, Grid3X3, TrendingUp, Star, Wrench, Cloud } from 'lucide-react'
+import { Cog, Cpu, Activity, Wrench, BarChart2, Wifi } from 'lucide-react'
 import { motion } from 'framer-motion'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 
 const services = [
   {
-    icon: Check,
-    title: 'Electrical & Automation Solution',
+    icon: Cog,
+    title: 'Engineering Consultancy',
     description:
-      'Seamless integration of industrial sensors with your existing systems for comprehensive data collection.',
-  },
-  {
-    icon: Grid3X3,
-    title: 'IoT Dashboard Development',
-    description:
-      'Custom dashboards that provide real-time insights and control over your IoT infrastructure.',
-  },
-  {
-    icon: TrendingUp,
-    title: 'Engineering Services',
-    description:
-      'Advanced analytics with intelligent alerting systems to keep you informed of critical events.',
-  },
-  {
-    icon: Star,
-    title: 'Remote Monitoring',
-    description:
-      '24/7 remote monitoring capabilities allowing you to oversee operations from anywhere.',
+      'End-to-end engineering for heavy industry — from project costing and feasibility to equipment selection and turnkey delivery.',
+    features: [
+      'Project costing & feasibility',
+      'Long product & rolling mill engineering',
+      'Testing & dismantling of plants',
+      'Turnkey project management',
+    ],
   },
   {
     icon: Wrench,
-    title: 'Predictive Maintenance',
+    title: 'Plant Engineering & Design',
     description:
-      'AI-powered predictive maintenance to prevent equipment failures before they occur.',
+      'Detailed design, layout, and structural engineering for new and retrofit industrial plant installations worldwide.',
+    features: [
+      'Greenfield & brownfield projects',
+      'Equipment selection & sizing',
+      'Site supervision & handover',
+      'International project experience',
+    ],
   },
   {
-    icon: Cloud,
-    title: 'API & Cloud Integration',
+    icon: Cpu,
+    title: 'PLC, HMI & SCADA',
     description:
-      'Robust API development and cloud integration for scalable, secure IoT solutions.',
+      'Complete PLC programming, HMI development, and SCADA integration for rolling mills and processing lines.',
+    features: [
+      'PLC programming',
+      'HMI development',
+      'SCADA integration',
+      'MCC / PCC supervision',
+    ],
+  },
+  {
+    icon: Wifi,
+    title: 'Electrical & Commissioning',
+    description:
+      'Full electrical system build-out — from equipment selection and cable laying through to testing and commissioning.',
+    features: [
+      'Electrical equipment selection',
+      'Cable laying & termination',
+      'Testing & commissioning',
+      'On-site support',
+    ],
+  },
+  {
+    icon: BarChart2,
+    title: 'IoT & Energy Monitoring',
+    description:
+      'Real-time IoT platforms that give live visibility into energy consumption and process data across production lines.',
+    features: [
+      'Real-time energy monitoring',
+      'Multi-sensor data fusion',
+      'Custom dashboards',
+      'Alerts & threshold management',
+    ],
+  },
+  {
+    icon: Activity,
+    title: 'AI/ML & Smart Detection',
+    description:
+      'AI and machine-learning solutions for anomaly detection, quality control, and predictive maintenance on the factory floor.',
+    features: [
+      'Foreign particle detection',
+      'Level & flow detection',
+      'Predictive maintenance models',
+      'AI-driven analytics',
+    ],
   },
 ]
 
@@ -158,14 +194,14 @@ export default function Home() {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: true, amount: 0.05 }}
           >
             {services.map((service, index) => {
               const Icon = service.icon
               return (
                 <motion.div
                   key={index}
-                  className="text-center p-8 rounded-2xl bg-white border border-gray-border/60 hover:border-primary/20 transition-all duration-300 group"
+                  className="p-8 rounded-2xl bg-white border border-gray-border/60 hover:border-primary/20 transition-all duration-300 group flex flex-col"
                   variants={cardVariants}
                   whileHover={{
                     y: -8,
@@ -173,15 +209,23 @@ export default function Home() {
                     transition: { duration: 0.3 },
                   }}
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary/10 to-accent/8 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:from-primary/15 group-hover:to-accent/12 transition-all duration-300">
-                    <Icon className="w-7 h-7 text-primary" />
+                  <div className="w-14 h-14 bg-gradient-to-br from-primary/10 to-accent/8 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:from-primary/15 group-hover:to-accent/12 transition-all duration-300">
+                    <Icon className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold text-dark mb-4">
+                  <h3 className="text-xl font-semibold text-dark mb-4 text-center">
                     {service.title}
                   </h3>
-                  <p className="text-gray-text leading-relaxed">
+                  <p className="text-gray-text leading-relaxed mb-5 text-center text-sm">
                     {service.description}
                   </p>
+                  <ul className="text-left text-gray-text space-y-2.5 mt-auto">
+                    {service.features.map((feature, i) => (
+                      <li key={i} className="flex items-center gap-2.5 text-sm">
+                        <span className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </motion.div>
               )
             })}
