@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head><title>Netlify Forms Detection</title></head>
+  <body>
+    <!--
+      This hidden static file lets Netlify detect the contact form
+      at build time (required for React SPAs using Netlify Forms).
+      It is never shown to users.
+    -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text"  name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+      <input type="text"  name="bot-field" />
+    </form>
+  </body>
+</html>
