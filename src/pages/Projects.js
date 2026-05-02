@@ -13,7 +13,7 @@ const engineeringProjects = [
     description:
       'Comprehensive project costing and engineering design for a Long Product (Bar and Profile) rolling mill. Covered equipment selection, layout planning, and full cost estimation for greenfield installation.',
     scope: [],
-    image: '/Company_pics/pic1.jpeg',
+    image: '/Company_pics/11.jpeg',
   },
   {
     vertical: 'ENGINEERING',
@@ -22,7 +22,7 @@ const engineeringProjects = [
     description:
       'End-to-end testing and safe dismantling of a complete Cold Rolling Mill (CRM) complex for stainless steel production. Included structural assessment, equipment cataloguing, and decommissioning supervision.',
     scope: [],
-    image: '/Company_pics/pic2.jpeg',
+    image: '/Company_pics/13.jpeg',
   },
 ]
 
@@ -42,28 +42,28 @@ const automationProject = {
     'Cable laying & termination',
     'Testing & commissioning',
   ],
-  images: ['/Company_pics/pic3.jpeg', '/Company_pics/pic4.jpeg', '/Company_pics/pic5.jpeg'],
+  images: ['/Company_pics/12.jpeg'],
 }
 
 // IoT & AI/ML — 2 cards, 2-col row
 const iotProjects = [
   {
-    vertical: 'IoT & AI/ML',
+    vertical: '',
     title: 'Real-Time Energy Monitoring System',
     location: 'Industrial Plants',
     description:
       'IoT-based energy monitoring platform providing live visibility into power consumption across production lines. Enables identification of inefficiencies and drives measurable energy savings.',
     scope: [],
-    image: '/Company_pics/pic6.jpeg',
+    image: '/Company_pics/14.jpeg',
   },
   {
-    vertical: 'IoT & AI/ML',
+    vertical: '',
     title: 'Foreign Particle & Level Detection',
     location: 'Manufacturing Facilities',
     description:
       'AI/ML-powered vision and sensor system for detecting foreign particles in process streams and monitoring material levels. Reduces defects, improves quality control, and prevents costly downtime.',
     scope: [],
-    image: '/Company_pics/pic7.jpeg',
+    image: '/Company_pics/15.png',
   },
 ]
 
@@ -167,21 +167,14 @@ export default function Projects() {
             className="bg-white rounded-2xl border border-gray-border/60 overflow-hidden group hover:border-primary/20 transition-all duration-300"
           >
             <div className="flex flex-col lg:flex-row">
-              {/* Image strip */}
+              {/* Single image */}
               <div className="lg:w-2/5 flex-shrink-0 relative overflow-hidden" style={{ minHeight: '280px' }}>
-                {/* Show 3 images stacked as a collage */}
-                <div className="grid grid-cols-3 h-full gap-0.5">
-                  {automationProject.images.map((src, i) => (
-                    <div key={i} className="relative overflow-hidden">
-                      <img
-                        src={src}
-                        alt={`${automationProject.title} ${i + 1}`}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        style={{ minHeight: '280px' }}
-                      />
-                    </div>
-                  ))}
-                </div>
+                <img
+                  src={automationProject.images[0]}
+                  alt={automationProject.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  style={{ minHeight: '280px' }}
+                />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-dark/10 pointer-events-none" />
                 <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-primary px-3 py-1 rounded-lg text-xs font-bold tracking-wider z-10">
                   {automationProject.vertical}
@@ -230,9 +223,11 @@ export default function Projects() {
                 <div className="h-48 relative overflow-hidden flex-shrink-0">
                   <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark/40 to-transparent" />
-                  <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-primary px-3 py-1 rounded-lg text-xs font-bold tracking-wider">
-                    {project.vertical}
-                  </span>
+                  {project.vertical && (
+                    <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-primary px-3 py-1 rounded-lg text-xs font-bold tracking-wider">
+                      {project.vertical}
+                    </span>
+                  )}
                 </div>
                 <div className="p-6 flex flex-col flex-1">
                   <h3 className="text-lg font-semibold text-dark mb-2 leading-snug">{project.title}</h3>

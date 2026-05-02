@@ -126,9 +126,9 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            <span className="text-dark">Connecting Sensors</span>
+            <span className="text-dark">From Sensors to</span>
             <br />
-            <span className="text-gradient">to Intelligence</span>
+            <span className="text-gradient">Smart Automation</span>
           </motion.h1>
           <motion.h2
             className="text-2xl lg:text-3xl font-light mb-8 text-gray-text"
@@ -136,7 +136,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15 }}
           >
-            Smart. Connected. Automated.
+            Intelligent. Connected. Scalable.
           </motion.h2>
           <motion.p
             className="text-lg text-gray-text max-w-2xl mx-auto mb-10"

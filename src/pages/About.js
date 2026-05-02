@@ -54,6 +54,9 @@ const galleryImages = [
   { src: '/Company_pics/pic8.jpeg',  caption: 'Control Systems' },
   { src: '/Company_pics/pic9.jpeg',  caption: 'Plant Operations' },
   { src: '/Company_pics/pic10.jpeg', caption: 'Field Deployment' },
+  { src: '/Company_pics/11.jpeg',    caption: 'Smart Automation' },
+  { src: '/Company_pics/12.jpeg',    caption: '6HI Cold Rolling Mill' },
+  { src: '/Company_pics/13.jpeg',    caption: 'CRM Complex' },
 ]
 
 export default function About() {
