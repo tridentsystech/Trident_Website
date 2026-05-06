@@ -114,8 +114,8 @@ export default function Footer() {
               <div className="space-y-2 text-gray-text text-sm">
                 <p>+91 9996570259</p>
                 <p>info@tridentsystech.com</p>
-                <p>Vrindavan Dham, Mathura Road</p>
-                <p>Aligarh 202001</p>
+                <p>1145, Galaxy Diamond Plaza</p>
+                <p>Sector-04, Greater Noida West</p>
               </div>
             </motion.div>
 

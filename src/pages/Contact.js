@@ -56,9 +56,9 @@ export default function Contact() {
       title: 'Address',
       content: (
         <>
-          Vrindavan Dham, Mathura Road
+          1145, Galaxy Diamond Plaza
           <br />
-          Aligarh 202001
+          Sector-04, Greater Noida West
         </>
       ),
     },
@@ -318,7 +318,7 @@ export default function Contact() {
                   transition={{ duration: 0.4 }}
                 >
                   <motion.a
-                    href="https://maps.google.com/?q=Vrindavan+Dham+Mathura+Road+Aligarh+202001"
+                    href="https://maps.app.goo.gl/p2KfFF1coJReednu6"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full bg-warm-bg-light border-2 border-primary/60 text-primary hover:bg-primary hover:text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 text-center"
